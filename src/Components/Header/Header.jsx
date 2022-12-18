@@ -9,6 +9,14 @@ const Header = () => {
     await logOut();
     navigate("/");
   };
+
+  const accNav = () => {
+    navigate("/account");
+  };
+
+  const favNav = () => {
+    navigate("/fav");
+  };
   return (
     <>
       {user ? (
@@ -30,12 +38,8 @@ const Header = () => {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item>
-                  <Link to="/account">Account</Link>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                  <Link to="/fav">Your Comics</Link>
-                </Dropdown.Item>
+                <Dropdown.Item onClick={accNav}>Account</Dropdown.Item>
+                <Dropdown.Item onClick={favNav}>Your Comics</Dropdown.Item>
                 <Dropdown.Item onClick={handleSignOut}>Sign Out</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
