@@ -6,16 +6,19 @@ import Footer from "./Components/Footer/Footer";
 import Auth from "./Components/Auth/Auth";
 import Home from "./Components/Home/Home";
 import Account from "./Components/Account/Account";
+import { AuthContextProvider } from "./Context/AuthContext";
 const App = () => {
   return (
     <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/signIn" element={<Auth />} />
-        <Route path="/account" element={<Account />} />
-      </Routes>
-      <Footer />
+      <AuthContextProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/signIn" element={<Auth />} />
+          <Route path="/account" element={<Account />} />
+        </Routes>
+        <Footer />
+      </AuthContextProvider>
     </BrowserRouter>
   );
 };
