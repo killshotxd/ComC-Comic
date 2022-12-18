@@ -14,7 +14,10 @@ const Auth = () => {
   };
 
   return (
-    <div>
+    <div
+      className="d-flex justify-content-center align-items-center"
+      style={{ height: "90vh" }}
+    >
       <GoogleButton onClick={handleGoogleSignIn} />
     </div>
   );
