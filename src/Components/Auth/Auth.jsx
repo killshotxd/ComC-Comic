@@ -27,14 +27,14 @@ const Auth = () => {
       <div
         className="d-flex flex-column justify-content-center align-items-center"
         style={{
-          height: "91vh",
+          height: "91.2vh",
           background:
             "url('https://github.com/killshotxd/EPUB/blob/main/image.jpg?raw=true')",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
       >
-        <h4 className="text-white shadow-lg">Welcome To ComC</h4>
+        <h4 className="text-white shadow-lg">Welcome To WEBCOMIC</h4>
         <h5 className="mt-3 text-white text-center">
           Read Your Favorite Comics Now For Free
         </h5>

@@ -30,10 +30,13 @@ const Header = () => {
                 id="dropdown-basic"
               >
                 <img
-                  style={{ height: "40px", width: "40px" }}
-                  className="rounded"
+                  style={{
+                    height: "40px",
+                    width: "40px",
+                    borderRadius: "5rem",
+                  }}
                   src={user.photoURL}
-                  alt=""
+                  alt="userImg"
                 />
               </Dropdown.Toggle>
 
@@ -46,7 +49,7 @@ const Header = () => {
           </div>
         </>
       ) : (
-        <div className="bg-dark text-white text-center p-2">COMC APP</div>
+        <div className="bg-dark text-white text-center p-2">WEBCOMIC APP</div>
       )}
     </>
   );
