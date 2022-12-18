@@ -12,7 +12,13 @@ const Cards = () => {
       setPost(response.data);
     });
   }, []);
-  return <div>{/* <h1>{post.TITLE}</h1> */}</div>;
+  return (
+    <>
+      {post.map((posts) => {
+        return <h1>{posts.TITLE}</h1>;
+      })}
+    </>
+  );
 };
 
 export default Cards;
