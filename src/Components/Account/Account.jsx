@@ -7,7 +7,7 @@ const Account = () => {
   const navigate = useNavigate();
   const handleSignOut = async () => {
     await logOut();
-    navigate("/signIn");
+    navigate("/");
   };
   return (
     <>
