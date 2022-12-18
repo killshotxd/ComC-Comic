@@ -15,11 +15,15 @@ const Cards = () => {
   }, []);
   return (
     <>
-      {post.map((posts) => {
+      {post.map((posts, index) => {
         return (
           <>
             <div className="container" style={{ height: "100vh" }}>
-              <Link to="${posts.TITLE/ID}">
+              <Link
+                key={posts.ID}
+                to={`/posts/${posts.ID}`}
+                state={{ posts: posts }}
+              >
                 <div style={{ width: "12rem" }} className="card p-2 mt-4">
                   <img
                     className=""

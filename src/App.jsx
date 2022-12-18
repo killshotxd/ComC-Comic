@@ -8,6 +8,7 @@ import Account from "./Components/Account/Account";
 import { AuthContextProvider } from "./Context/AuthContext";
 import Protected from "./Components/Protected/Protected";
 import Favourite from "./Components/Favourites/Favourite";
+import Posts from "./Components/Posts/Posts";
 const App = () => {
   return (
     <BrowserRouter>
@@ -33,6 +34,7 @@ const App = () => {
           />
 
           <Route path="/fav" element={<Favourite />} />
+          <Route path="/posts/*" element={<Posts />} />
         </Routes>
         <Footer />
       </AuthContextProvider>
