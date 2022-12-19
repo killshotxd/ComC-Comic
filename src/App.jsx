@@ -9,6 +9,7 @@ import { AuthContextProvider } from "./Context/AuthContext";
 import Protected from "./Components/Protected/Protected";
 import Favourite from "./Components/Favourites/Favourite";
 import Posts from "./Components/Posts/Posts";
+import Reader from "./Components/Reader/Reader";
 const App = () => {
   return (
     <BrowserRouter>
@@ -35,6 +36,7 @@ const App = () => {
 
           <Route path="/fav" element={<Favourite />} />
           <Route path="/posts/*" element={<Posts />} />
+          <Route path="/reader/*" element={<Reader />} />
         </Routes>
         <Footer />
       </AuthContextProvider>

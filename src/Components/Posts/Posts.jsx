@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import styles from "./Posts.module.css";
 const Posts = () => {
   // const location = useLocation();
+  const navigate = useNavigate();
   const { state } = useLocation();
   const { posts } = state || {};
-  console.log(state);
+  // console.log(state);
   // const ping = location.state.posts;
   // console.log(posts.posts.TITLE);
 
@@ -28,6 +31,19 @@ const Posts = () => {
               <h6>
                 DESCRIPTION : <p>{posts.DESCRIPTION}</p>
               </h6>
+
+              <div className={styles.wrapper}>
+                <p
+                  onClick={() => {
+                    navigate(`/reader/${posts.ID}/${posts.TITLE}`, {
+                      state: { posts },
+                    });
+                  }}
+                  className={styles.btn}
+                >
+                  <span>Read Now</span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
