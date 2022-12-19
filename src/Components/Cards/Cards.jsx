@@ -19,12 +19,12 @@ const Cards = () => {
         return (
           <>
             <div className="container" style={{ height: "100vh" }}>
-              <Link
-                key={posts.ID}
-                to={`/posts/${posts.ID}`}
-                state={{ posts: posts }}
-              >
-                <div style={{ width: "12rem" }} className="card p-2 mt-4">
+              <Link key={posts.ID} to={`/posts/${posts.ID}`} state={{ posts }}>
+                <div
+                  key={posts.ID}
+                  style={{ width: "12rem" }}
+                  className="card p-2 mt-4"
+                >
                   <img
                     className=""
                     style={{ height: "15rem", width: "auto" }}

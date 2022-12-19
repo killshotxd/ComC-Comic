@@ -17,12 +17,16 @@ const Header = () => {
   const favNav = () => {
     navigate("/fav");
   };
+
+  const handleHome = () => {
+    navigate("/home");
+  };
   return (
     <>
       {user ? (
         <>
           <div className="bg-dark text-white p-2 d-flex justify-content-between align-items-center">
-            <h4> Welcome {user.displayName}</h4>
+            <h4 onClick={handleHome}> Welcome {user.displayName}</h4>
             <Dropdown>
               <Dropdown.Toggle
                 className="rounded"
