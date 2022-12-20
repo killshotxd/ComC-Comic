@@ -9,23 +9,26 @@ const Cards = () => {
   const [post, setPost] = useState([]);
 
   useEffect(() => {
-    axios.get(API).then((response) => {
+    axios.get(API, { crossdomain: true }).then((response) => {
       //   console.log(response.data);
       setPost(response.data);
     });
   }, []);
   return (
     <>
-      {post.map((posts, index) => {
-        return (
-          <>
-            <div className="container" style={{ height: "100vh" }}>
+      <div
+        className="container d-flex flex-wrap"
+        style={{ height: "100vh", gap: "3rem" }}
+      >
+        {post.map((posts, index) => {
+          return (
+            <>
               <div
                 onClick={() => {
                   navigate(`/posts/${posts.ID}`, { state: { posts } });
                 }}
                 key={posts.ID}
-                style={{ width: "12rem", cursor: "pointer" }}
+                style={{ width: "12rem", cursor: "pointer", height: "20rem" }}
                 className="card p-2 mt-4"
               >
                 <img
@@ -38,10 +41,10 @@ const Cards = () => {
                   {posts.TITLE} ({posts.YEAR})
                 </p>
               </div>
-            </div>
-          </>
-        );
-      })}
+            </>
+          );
+        })}
+      </div>
     </>
   );
 };

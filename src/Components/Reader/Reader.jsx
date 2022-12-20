@@ -11,11 +11,11 @@ const Reader = () => {
     // minSpreadWidth: 1500,
     method: "default",
     width: "100%",
-    height: 700,
+    height: 800,
   });
   var displayed = rendition.display();
   rendition.hooks.content.register(function (contents, view) {
-    var css = "img { max-width: 100%; height: auto ;}";
+    var css = "img { max-width: 100%; height: auto !important ;}";
     var head = contents.document.getElementsByTagName("head")[0];
     var s = contents.document.createElement("style");
     s.setAttribute("type", "text/css");
@@ -38,12 +38,8 @@ const Reader = () => {
   };
   return (
     <>
-      <section style={{ height: "100%" }}>
-        <div
-          className="spreads"
-          id="reader"
-          style={{ width: "100%", height: "100%" }}
-        ></div>
+      <section style={{ height: "110vh" }}>
+        <div className="spreads" id="reader"></div>
 
         <div
           style={{

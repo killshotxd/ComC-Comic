@@ -20,7 +20,11 @@ const Posts = () => {
         <div className="row">
           <div className="col d-flex" style={{ gap: "3rem" }}>
             <div>
-              <img src={posts.COVER} alt="" />
+              <img
+                style={{ height: "23rem", width: "auto" }}
+                src={posts.COVER}
+                alt=""
+              />
             </div>
             <div>
               <h4>
