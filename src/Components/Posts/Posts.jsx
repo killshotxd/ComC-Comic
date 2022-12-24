@@ -14,18 +14,19 @@ const Posts = () => {
   return (
     <>
       <div
-        className="container p-3 d-flex justify-content-center align-items-center"
-        style={{ height: "100vh" }}
+        className="container p-3  "
+        style={{ height: "100%", minHeight: "100vh" }}
       >
         <div className="row">
-          <div className="col d-flex" style={{ gap: "3rem" }}>
-            <div>
-              <img
-                style={{ height: "23rem", width: "auto" }}
-                src={posts.COVER}
-                alt=""
-              />
-            </div>
+          <div className="col d-flex justify-content-center " style={{}}>
+            <img
+              style={{ height: "30rem", width: "auto" }}
+              src={posts.COVER}
+              alt=""
+            />
+          </div>
+
+          <div className="col d-flex justify-content-center mt-2">
             <div>
               <h4>
                 {posts.TITLE} ({posts.YEAR})

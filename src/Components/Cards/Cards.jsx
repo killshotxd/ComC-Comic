@@ -17,8 +17,8 @@ const Cards = () => {
   return (
     <>
       <div
-        className="container d-flex flex-wrap"
-        style={{ height: "100vh", gap: "3rem" }}
+        className="container d-flex flex-wrap pb-5 justify-content-center"
+        style={{ height: "100%", gap: "3rem", minHeight: "100vh" }}
       >
         {post.map((posts, index) => {
           return (
