@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 const Reader = () => {
   const { state } = useLocation();
@@ -14,20 +14,23 @@ const Reader = () => {
     height: 800,
   });
   var displayed = rendition.display();
-  rendition.hooks.content.register(function (contents, view) {
-    var css = "img { max-width: 100%; height: auto !important ;}";
-    var head = contents.document.getElementsByTagName("head")[0];
-    var s = contents.document.createElement("style");
-    s.setAttribute("type", "text/css");
-    if (s.styleSheet) {
-      // IE
-      s.styleSheet.cssText = css;
-    } else {
-      // the world
-      s.appendChild(contents.document.createTextNode(css));
-    }
-    head.appendChild(s);
-  });
+
+  useEffect(() => {
+    rendition.hooks.content.register(function (contents, view) {
+      var css = "img { max-width: 100%; height: auto !important ;}";
+      var head = contents.document.getElementsByTagName("head")[0];
+      var s = contents.document.createElement("style");
+      s.setAttribute("type", "text/css");
+      if (s.styleSheet) {
+        // IE
+        s.styleSheet.cssText = css;
+      } else {
+        // the world
+        s.appendChild(contents.document.createTextNode(css));
+      }
+      head.appendChild(s);
+    });
+  }, []);
 
   const handlePrev = () => {
     rendition.prev();
@@ -38,7 +41,7 @@ const Reader = () => {
   };
   return (
     <>
-      <section style={{ height: "110vh" }}>
+      <section style={{ minHeight: "100vh", height: "100%" }}>
         <div className="spreads" id="reader"></div>
 
         <div

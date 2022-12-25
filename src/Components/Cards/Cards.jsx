@@ -28,7 +28,7 @@ const Cards = () => {
                   navigate(`/posts/${posts.ID}`, { state: { posts } });
                 }}
                 key={posts.ID}
-                style={{ width: "12rem", cursor: "pointer", height: "20rem" }}
+                style={{ width: "12rem", cursor: "pointer", height: "21rem" }}
                 className="card p-2 mt-4"
               >
                 <img
