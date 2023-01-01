@@ -59,6 +59,7 @@ const Reader = () => {
               top: "22rem",
               left: "0",
               border: "none",
+              background: "transparent",
             }}
           >
             <img onClick={handlePrev} src={left} alt="leftArrow" />
@@ -69,6 +70,7 @@ const Reader = () => {
               top: "22rem",
               right: "0",
               border: "none",
+              background: "transparent",
             }}
           >
             <img onClick={handleNext} src={right} alt="rightArrow" />
