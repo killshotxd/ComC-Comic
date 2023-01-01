@@ -14,13 +14,18 @@ const Posts = () => {
   return (
     <>
       <div
-        className="container p-3  "
+        className="container p-3 d-flex "
         style={{ height: "100%", minHeight: "100vh" }}
       >
-        <div className="row">
+        <div className="row justify-content-center align-items-center">
           <div className="col d-flex justify-content-center " style={{}}>
             <img
-              style={{ height: "30rem", width: "auto" }}
+              style={{
+                height: "30rem",
+                width: "auto",
+                border: "5px solid gold",
+                borderRadius: "10px",
+              }}
               src={posts.COVER}
               alt=""
             />

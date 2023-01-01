@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import right from "../../assets/rightArr.png";
+import left from "../../assets/leftArr.png";
 const Reader = () => {
   const { state } = useLocation();
   const { posts } = state || {};
@@ -8,16 +10,16 @@ const Reader = () => {
   var rendition = book.renderTo("reader", {
     flow: "paginated",
     spread: "always",
-    // minSpreadWidth: 1500,
+    // minSpreadWidth: 800,
     method: "default",
     width: "100%",
-    height: 800,
+    // height: "900",
   });
   var displayed = rendition.display();
 
   useEffect(() => {
     rendition.hooks.content.register(function (contents, view) {
-      var css = "img { max-width: 100%; height: auto !important ;}";
+      var css = "img { max-width: 100%; height: 90% !important  ;}";
       var head = contents.document.getElementsByTagName("head")[0];
       var s = contents.document.createElement("style");
       s.setAttribute("type", "text/css");
@@ -41,7 +43,7 @@ const Reader = () => {
   };
   return (
     <>
-      <section style={{ minHeight: "100vh", height: "100%" }}>
+      <section style={{ minHeight: "100vh", height: "100% !important" }}>
         <div className="spreads" id="reader"></div>
 
         <div
@@ -52,16 +54,24 @@ const Reader = () => {
           }}
         >
           <button
-            style={{ position: "absolute", top: "22rem", left: "0" }}
-            onClick={handlePrev}
+            style={{
+              position: "absolute",
+              top: "22rem",
+              left: "0",
+              border: "none",
+            }}
           >
-            Prev
+            <img onClick={handlePrev} src={left} alt="leftArrow" />
           </button>
           <button
-            style={{ position: "absolute", top: "22rem", right: "0" }}
-            onClick={handleNext}
+            style={{
+              position: "absolute",
+              top: "22rem",
+              right: "0",
+              border: "none",
+            }}
           >
-            Next
+            <img onClick={handleNext} src={right} alt="rightArrow" />
           </button>
         </div>
       </section>
